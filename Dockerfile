@@ -2,13 +2,12 @@
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src
 
-# Copia o csproj e restaura as dependências (ajuste o caminho se necessário)
-COPY ["DylandeContabil/DylandeContabil.csproj", "DylandeContabil/"]
-RUN dotnet restore "DylandeContabil/DylandeContabil.csproj"
+# Copia o ficheiro csproj e restaura as dependências
+COPY ["DylandeContabil.csproj", "./"]
+RUN dotnet restore "DylandeContabil.csproj"
 
 # Copia o restante do código e publica
 COPY . .
-WORKDIR "/src/DylandeContabil"
 RUN dotnet publish -c Release -o /app/publish /p:UseAppHost=false
 
 # Estágio de Execução
