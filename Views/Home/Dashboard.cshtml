@@ -1,0 +1,66 @@
+@{
+    var empresa = (string)(ViewBag.Empresa ?? "RAZCOF — Comércio e Prestação de Serviços");
+    var modules = new[] { "Plano de Contas", "Lançamentos", "Diário Geral", "Razão Geral", "Balancetes", "Regularizações", "Encerramento" };
+}
+<!DOCTYPE html>
+<html lang="pt-AO">
+<head>
+    <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Painel | DYLANDE Contabil</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body class="app-page">
+<div class="app-layout">
+    <aside class="sidebar" id="sidebar">
+        <a class="brand sidebar-brand" asp-controller="Home" asp-action="Dashboard"><span class="brand-mark">DY</span><span>dylande<span class="brand-muted">.contabil</span></span></a>
+        <div class="sidebar-caption">ESPAÇO DE TRABALHO</div>
+        <a class="nav-item active" asp-controller="Home" asp-action="Dashboard"><span class="nav-icon">▦</span> Visão geral</a>
+        <div class="sidebar-caption nav-caption">CONTABILIDADE</div>
+        <nav class="main-nav">
+            <a class="nav-item" asp-controller="Home" asp-action="Module" asp-route-id="Plano de Contas" asp-route-empresa="@empresa"><span class="nav-icon">▤</span> Plano de Contas</a>
+            <a class="nav-item" asp-controller="Home" asp-action="Module" asp-route-id="Lançamentos" asp-route-empresa="@empresa"><span class="nav-icon">＋</span> Lançamentos <span class="nav-count">12</span></a>
+            <a class="nav-item" asp-controller="Home" asp-action="Module" asp-route-id="Diário Geral" asp-route-empresa="@empresa"><span class="nav-icon">☷</span> Diário Geral</a>
+            <a class="nav-item" asp-controller="Home" asp-action="Module" asp-route-id="Razão Geral" asp-route-empresa="@empresa"><span class="nav-icon">▥</span> Razão Geral</a>
+            <a class="nav-item" asp-controller="Home" asp-action="Module" asp-route-id="Balancetes" asp-route-empresa="@empresa"><span class="nav-icon">▧</span> Balancetes</a>
+            <a class="nav-item" asp-controller="Home" asp-action="Module" asp-route-id="Regularizações" asp-route-empresa="@empresa"><span class="nav-icon">⟳</span> Regularizações</a>
+            <a class="nav-item" asp-controller="Home" asp-action="Module" asp-route-id="Encerramento" asp-route-empresa="@empresa"><span class="nav-icon">◫</span> Encerramento</a>
+        </nav>
+        <div class="sidebar-bottom"><a class="nav-item" href="#" id="dashboardSettings"><span class="nav-icon">⚙</span> Definições</a><a class="nav-item" asp-controller="Home" asp-action="Login"><span class="nav-icon">↪</span> Terminar sessão</a><div class="sidebar-user"><span class="user-avatar">FM</span><span><strong>Contabilista</strong><small>Perfil profissional</small></span><span class="user-more">···</span></div></div>
+    </aside>
+    <main class="app-main">
+        <header class="topbar"><button class="mobile-menu" id="mobileMenu" aria-label="Abrir menu">☰</button><div class="breadcrumb">Espaço de trabalho <span>/</span> <strong>Visão geral</strong></div><div class="topbar-actions"><button class="top-icon" aria-label="Notificações">♧<i></i></button><div class="top-divider"></div><div class="current-company"><span class="company-avatar small">DY</span><span><small>EMPRESA ACTIVA</small><strong>@empresa</strong></span><span class="chevron">⌄</span></div></div></header>
+        <div class="page-content">
+            <div class="page-heading"><div><span class="eyebrow">DOMINGO, 1 DE NOVEMBRO DE 2026</span><h1>Visão geral</h1><p>Acompanhe a actividade contabilística da sua empresa.</p></div><button class="btn btn-primary" id="newEntry"><span>＋</span> Novo lançamento</button></div>
+            <div class="overview-banner"><div><span class="banner-tag"><i></i> EXERCÍCIO EM CURSO</span><h2>Bom trabalho. Vamos manter tudo em ordem.</h2><p>Consulte os movimentos recentes e acompanhe os itens que precisam da sua atenção.</p></div><div class="banner-art"><div class="art-ring ring-a"></div><div class="art-ring ring-b"></div><div class="art-bars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div></div>
+            <div class="section-title"><div><h2>Resumo contabilístico</h2><p>Indicadores ilustrativos para esta demonstração</p></div><button class="period-select">Exercício 2026 <span>⌄</span></button></div>
+            <div class="stats-grid">
+                <article class="stat-card"><div class="stat-top"><span>Total de lançamentos</span><span class="stat-icon icon-navy">▤</span></div><strong>1.284</strong><div class="stat-foot"><span class="trend-up">↗ 8,4%</span><span>face ao período anterior</span></div><div class="stat-spark spark-one"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></article>
+                <article class="stat-card"><div class="stat-top"><span>Pendentes de aprovação</span><span class="stat-icon icon-amber">◷</span></div><strong>12</strong><div class="stat-foot"><span class="trend-neutral">Requer atenção</span></div><div class="stat-spark spark-two"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></article>
+                <article class="stat-card"><div class="stat-top"><span>Lançamentos aprovados</span><span class="stat-icon icon-green">✓</span></div><strong>1.272</strong><div class="stat-foot"><span class="trend-up">99,1%</span><span>do total registado</span></div><div class="stat-spark spark-three"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></article>
+                <article class="stat-card"><div class="stat-top"><span>Saldo de conferência</span><span class="stat-icon icon-blue">⇄</span></div><strong>0,00 <small>Kz</small></strong><div class="stat-foot"><span class="balanced-dot"></span><span>Débitos e créditos equilibrados</span></div><div class="stat-spark spark-four"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></article>
+            </div>
+            <div class="dashboard-columns">
+                <section class="panel movements-panel"><div class="panel-heading"><div><h2>Movimentos recentes</h2><p>Últimos lançamentos registados</p></div><a asp-controller="Home" asp-action="Module" asp-route-id="Diário Geral" asp-route-empresa="@empresa">Ver diário geral <span>→</span></a></div>
+                    <div class="table-wrap"><table><thead><tr><th>N.º LANÇAMENTO</th><th>HISTÓRICO</th><th>DATA</th><th>VALOR</th><th>ESTADO</th></tr></thead><tbody>
+                    <tr><td><strong class="entry-id">LN-2026-1284</strong></td><td><strong>Pagamento de serviços</strong><small>Documento: FT 2026/083</small></td><td>01 Nov, 2026</td><td class="amount">245.000,00 Kz</td><td><span class="badge badge-approved">Aprovado</span></td></tr>
+                    <tr><td><strong class="entry-id">LN-2026-1283</strong></td><td><strong>Compra de material</strong><small>Documento: FT 2026/082</small></td><td>31 Out, 2026</td><td class="amount">86.500,00 Kz</td><td><span class="badge badge-pending">Pendente</span></td></tr>
+                    <tr><td><strong class="entry-id">LN-2026-1282</strong></td><td><strong>Recebimento de cliente</strong><small>Documento: REC 2026/041</small></td><td>31 Out, 2026</td><td class="amount">520.000,00 Kz</td><td><span class="badge badge-posted">Contabilizado</span></td></tr>
+                    <tr><td><strong class="entry-id">LN-2026-1281</strong></td><td><strong>Pagamento de renda</strong><small>Documento: PG 2026/019</small></td><td>30 Out, 2026</td><td class="amount">150.000,00 Kz</td><td><span class="badge badge-approved">Aprovado</span></td></tr>
+                    </tbody></table></div>
+                </section>
+                <section class="panel attention-panel"><div class="panel-heading"><div><h2>Atenção necessária</h2><p>Itens para rever</p></div><span class="attention-total">3</span></div>
+                    <a class="attention-item" asp-controller="Home" asp-action="Module" asp-route-id="Lançamentos" asp-route-empresa="@empresa"><span class="attention-icon amber-bg">◷</span><span><strong>12 lançamentos pendentes</strong><small>Precisam de aprovação</small></span><span class="attention-arrow">→</span></a>
+                    <a class="attention-item" asp-controller="Home" asp-action="Module" asp-route-id="Regularizações" asp-route-empresa="@empresa"><span class="attention-icon blue-bg">↻</span><span><strong>Regularizações do período</strong><small>Rever antes do encerramento</small></span><span class="attention-arrow">→</span></a>
+                    <a class="attention-item" asp-controller="Home" asp-action="Module" asp-route-id="Encerramento" asp-route-empresa="@empresa"><span class="attention-icon green-bg">▧</span><span><strong>Conferência de saldos</strong><small>Verificar balancete do exercício</small></span><span class="attention-arrow">→</span></a>
+                    <div class="help-card"><span class="help-icon">i</span><div><strong>Precisa de ajuda?</strong><p>Consulte as definições ou contacte o administrador do sistema.</p></div></div>
+                </section>
+            </div>
+            <footer class="app-footer"><span>DYLANDE Contabil <span>·</span> Interface demonstrativa</span><span>Versão 0.1.0 <span>·</span> 2026</span></footer>
+        </div>
+    </main>
+</div>
+<div class="toast" id="toast" role="status"></div>
+<script src="~/js/site.js"></script>
+</body></html>

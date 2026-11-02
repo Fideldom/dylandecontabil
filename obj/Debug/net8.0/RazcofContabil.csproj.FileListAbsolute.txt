@@ -1,0 +1,8 @@
+C:\Users\PC\Desktop\DylandeContabil\obj\Debug\net8.0\rpswa.dswa.cache.json
+C:\Users\PC\Desktop\DylandeContabil\obj\Debug\net8.0\RazcofContabil.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\PC\Desktop\DylandeContabil\obj\Debug\net8.0\RazcofContabil.AssemblyInfoInputs.cache
+C:\Users\PC\Desktop\DylandeContabil\obj\Debug\net8.0\RazcofContabil.AssemblyInfo.cs
+C:\Users\PC\Desktop\DylandeContabil\obj\Debug\net8.0\RazcofContabil.csproj.CoreCompileInputs.cache
+C:\Users\PC\Desktop\DylandeContabil\obj\Debug\net8.0\RazcofContabil.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\PC\Desktop\DylandeContabil\obj\Debug\net8.0\RazcofContabil.RazorAssemblyInfo.cache
+C:\Users\PC\Desktop\DylandeContabil\obj\Debug\net8.0\RazcofContabil.RazorAssemblyInfo.cs
