@@ -11,6 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
     <link rel="stylesheet" href="~/css/login.css" />
 </head>
 <body>
@@ -44,7 +45,7 @@
 
                     <div class="label-row">
                     <label for="password">Palavra-passe</label>
-                    <a href="#" id="forgotLink">Esqueceu-se?</a>
+                    <div class="login-links"><a href="#" id="forgotLink">Esqueceu-se?</a><a href="#" id="registerLink">Criar acesso</a></div>
                     </div>
 
                     <div class="input-wrap">
@@ -59,13 +60,13 @@
 
                     <p class="form-error" id="loginError" role="alert"></p>
 
-                    <button class="btn btn-primary btn-wide" type="submit">Entrar <span>→</span></button>
+                    <button class="btn btn-primary btn-wide" type="submit">Entrar <i class="bi bi-arrow-right"></i></button>
 
                 </form>
 
                 <div class="login-foot">
                 <span>© 2026 DYLANDE Contabil</span>
-                <span><i class="tiny-lock">▣</i> Ambiente de acesso protegido</span>
+                <span><i class="bi bi-shield-lock tiny-lock"></i> Ambiente de acesso protegido</span>
                 </div>
 
             </div>
@@ -91,10 +92,10 @@
             <h2 id="companyTitle">A sua carteira</h2>
             <p>Escolha a empresa em que pretende trabalhar.</p>
             </div>
-            <button class="icon-button" data-close="companyModal" aria-label="Fechar">×</button>
+            <button class="icon-button" data-close="companyModal" aria-label="Fechar"><i class="bi bi-x-lg"></i></button>
             </div>
             <div class="company-search">
-            <span>⌕</span>
+            <i class="bi bi-search"></i>
             <input id="companySearch" placeholder="Pesquisar empresa ou NIF..." />
             </div>
 
@@ -106,7 +107,7 @@
                 <strong>RAZCOF</strong>
                 <small>Comércio e Prestação de Serviços · NIF 5001234567</small>
                 </span>
-                <span class="company-state"><i></i> Activa</span><span class="company-check">✓</span>
+                <span class="company-state"><i></i> Activa</span><span class="company-check"><i class="bi bi-check2"></i></span>
                 </button>
 
                 <button class="company-option" data-company="DYLANDE Prestação de Serviços e Comércio." data-nif="5007654321">
@@ -116,7 +117,7 @@
                 <small>Vendas de softwares · NIF 5007654321</small>
                 </span>
                 <span class="company-state"><i></i> Activa</span>
-                <span class="company-check">✓</span>
+                <span class="company-check"><i class="bi bi-check2"></i></span>
                 </button>
 
                 <button class="company-option" data-company="Comércio Modelo, Lda." data-nif="5009876543">
@@ -126,17 +127,56 @@
                 <small>Comércio geral · NIF 5009876543</small>
                 </span>
                 <span class="company-state"><i></i> Activa</span>
-                <span class="company-check">✓</span>
+                <span class="company-check"><i class="bi bi-check2"></i></span>
                 </button>
 
             </div>
 
             <div class="modal-footer">
             <span id="selectedCompanyLabel">1 empresa seleccionada</span>
-            <button class="btn btn-primary" id="accessCompany">Aceder à empresa <span>→</span>
+            <button class="btn btn-primary" id="accessCompany">Aceder à empresa <i class="bi bi-arrow-right"></i>
             </button>
             </div>
             
+        </section>
+    </div>
+
+    <div class="modal-backdrop" id="registerModal" aria-hidden="true">
+        <section class="modal auth-modal" role="dialog" aria-modal="true" aria-labelledby="registerTitle">
+            <div class="modal-header">
+                <div>
+                    <span class="eyebrow">NOVO ACESSO</span>
+                    <h2 id="registerTitle">Criar acesso</h2>
+                    <p>Crie um utilizador para esta demonstração.</p>
+                </div>
+                <button class="icon-button" data-close="registerModal" aria-label="Fechar"><i class="bi bi-x-lg"></i></button>
+            </div>
+            <form id="registerForm" class="auth-form" novalidate>
+                <div class="field-group"><label for="registerName">Nome completo</label><div class="input-wrap"><span class="input-icon"><i class="bi bi-person"></i></span><input id="registerName" autocomplete="name" placeholder="Nome do utilizador" required /></div></div>
+                <div class="field-group"><label for="registerEmail">E-mail</label><div class="input-wrap"><span class="input-icon"><i class="bi bi-envelope"></i></span><input id="registerEmail" type="email" autocomplete="email" placeholder="utilizador@empresa.ao" required /></div></div>
+                <div class="field-group"><label for="registerPassword">Palavra-passe</label><div class="input-wrap"><span class="input-icon"><i class="bi bi-lock"></i></span><input id="registerPassword" type="password" autocomplete="new-password" placeholder="Mínimo de 6 caracteres" required /></div></div>
+                <div class="field-group"><label for="registerConfirm">Confirmar palavra-passe</label><div class="input-wrap"><span class="input-icon"><i class="bi bi-shield-check"></i></span><input id="registerConfirm" type="password" autocomplete="new-password" placeholder="Repita a palavra-passe" required /></div></div>
+                <p class="form-error" id="registerError" role="alert"></p>
+                <div class="modal-footer"><span>Acesso local de demonstração</span><button class="btn btn-primary" type="submit">Criar acesso <i class="bi bi-check2"></i></button></div>
+            </form>
+        </section>
+    </div>
+
+    <div class="modal-backdrop" id="forgotModal" aria-hidden="true">
+        <section class="modal auth-modal" role="dialog" aria-modal="true" aria-labelledby="forgotTitle">
+            <div class="modal-header">
+                <div>
+                    <span class="eyebrow">RECUPERAÇÃO</span>
+                    <h2 id="forgotTitle">Recuperar acesso</h2>
+                    <p>Indique o e-mail associado ao acesso.</p>
+                </div>
+                <button class="icon-button" data-close="forgotModal" aria-label="Fechar"><i class="bi bi-x-lg"></i></button>
+            </div>
+            <form id="forgotForm" class="auth-form" novalidate>
+                <div class="field-group"><label for="forgotEmail">E-mail</label><div class="input-wrap"><span class="input-icon"><i class="bi bi-envelope"></i></span><input id="forgotEmail" type="email" placeholder="utilizador@empresa.ao" required /></div></div>
+                <p class="form-success" id="forgotMessage" role="status"></p>
+                <div class="modal-footer"><span>Sem envio real nesta fase</span><button class="btn btn-primary" type="submit">Continuar <i class="bi bi-arrow-right"></i></button></div>
+            </form>
         </section>
     </div>
 
@@ -148,7 +188,7 @@
             <h2 id="settingsTitle">Definições</h2>
             <p>Configure a apresentação desta demonstração.</p>
             </div>
-            <button class="icon-button" data-close="settingsModal" aria-label="Fechar">×</button>
+            <button class="icon-button" data-close="settingsModal" aria-label="Fechar"><i class="bi bi-x-lg"></i></button>
             </div>
 
             <div class="settings-content">
@@ -165,7 +205,7 @@
                 </select>
 
                 <div class="settings-note">
-                <span>ⓘ</span>
+                <i class="bi bi-info-circle"></i>
                 <p>As preferências e o acesso são demonstrativos nesta fase. Ainda não existe autenticação nem gravação permanente.</p>
                 </div>
                 

@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DylandeContabil")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0509b302447ea5056fbdc033911f5a10d06144d5")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1c95ba84aa832874cc10643f6b2286aa7e9eb1c9")]
 [assembly: System.Reflection.AssemblyProductAttribute("DylandeContabil")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DylandeContabil")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
