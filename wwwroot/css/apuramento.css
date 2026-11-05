@@ -1,23 +1,23 @@
 /* Apuramento — DYLANDE Contabil */
 
 .notice-icon {
-    width: 32px;
-    min-width: 32px;
-    height: 32px;
-    display: grid;
-    place-items: center;
-    border-radius: 8px;
-    background: #edf4ff;
-    color: #2563eb;
+  width: 32px;
+  min-width: 32px;
+  height: 32px;
+  display: grid;
+  place-items: center;
+  border-radius: 8px;
+  background: #edf4ff;
+  color: #2563eb;
 }
 
 @media (max-width: 720px) {
-    .page-actions {
-        width: 100%;
-        flex-wrap: wrap;
-    }
+  .page-actions {
+    width: 100%;
+    flex-wrap: wrap;
+  }
 
-    .page-actions .btn {
-        flex: 1;
-    }
+  .page-actions .btn {
+    flex: 1;
+  }
 }

@@ -152,12 +152,46 @@
                 <button class="icon-button" data-close="registerModal" aria-label="Fechar"><i class="bi bi-x-lg"></i></button>
             </div>
             <form id="registerForm" class="auth-form" novalidate>
-                <div class="field-group"><label for="registerName">Nome completo</label><div class="input-wrap"><span class="input-icon"><i class="bi bi-person"></i></span><input id="registerName" autocomplete="name" placeholder="Nome do utilizador" required /></div></div>
-                <div class="field-group"><label for="registerEmail">E-mail</label><div class="input-wrap"><span class="input-icon"><i class="bi bi-envelope"></i></span><input id="registerEmail" type="email" autocomplete="email" placeholder="utilizador@empresa.ao" required /></div></div>
-                <div class="field-group"><label for="registerPassword">Palavra-passe</label><div class="input-wrap"><span class="input-icon"><i class="bi bi-lock"></i></span><input id="registerPassword" type="password" autocomplete="new-password" placeholder="Mínimo de 6 caracteres" required /></div></div>
-                <div class="field-group"><label for="registerConfirm">Confirmar palavra-passe</label><div class="input-wrap"><span class="input-icon"><i class="bi bi-shield-check"></i></span><input id="registerConfirm" type="password" autocomplete="new-password" placeholder="Repita a palavra-passe" required /></div></div>
+                <div class="field-group">
+                <label for="registerName">Nome completo</label>
+                <div class="input-wrap">
+
+                <span class="input-icon"><i class="bi bi-person"></i></span>
+                <input id="registerName" autocomplete="name" placeholder="Nome do utilizador" required />
+                </div>
+
+                </div>
+
+
+                <div class="field-group">
+                <label for="registerEmail">E-mail</label>
+
+                <div class="input-wrap">
+                <span class="input-icon"><i class="bi bi-envelope"></i></span>
+                <input id="registerEmail" type="email" autocomplete="email" placeholder="utilizador@empresa.ao" required />
+                </div>
+
+                </div>
+
+                <div class="field-group">
+                <label for="registerPassword">Palavra-passe</label>
+                <div class="input-wrap">
+                <span class="input-icon"><i class="bi bi-lock"></i></span>
+                <input id="registerPassword" type="password" autocomplete="new-password" placeholder="Mínimo de 6 caracteres" required />
+                </div>
+                </div>
+                <div class="field-group">
+                <label for="registerConfirm">Confirmar palavra-passe</label>
+                <div class="input-wrap">
+                <span class="input-icon"><i class="bi bi-shield-check"></i></span>
+                <input id="registerConfirm" type="password" autocomplete="new-password" placeholder="Repita a palavra-passe" required />
+                </div>
+                </div>
                 <p class="form-error" id="registerError" role="alert"></p>
-                <div class="modal-footer"><span>Acesso local de demonstração</span><button class="btn btn-primary" type="submit">Criar acesso <i class="bi bi-check2"></i></button></div>
+                <div class="modal-footer">
+                <span>Acesso local de demonstração</span>
+                <button class="btn btn-primary" type="submit">Criar acesso <i class="bi bi-check2"></i></button>
+                </div>
             </form>
         </section>
     </div>
@@ -170,12 +204,23 @@
                     <h2 id="forgotTitle">Recuperar acesso</h2>
                     <p>Indique o e-mail associado ao acesso.</p>
                 </div>
+
                 <button class="icon-button" data-close="forgotModal" aria-label="Fechar"><i class="bi bi-x-lg"></i></button>
             </div>
             <form id="forgotForm" class="auth-form" novalidate>
-                <div class="field-group"><label for="forgotEmail">E-mail</label><div class="input-wrap"><span class="input-icon"><i class="bi bi-envelope"></i></span><input id="forgotEmail" type="email" placeholder="utilizador@empresa.ao" required /></div></div>
+                <div class="field-group">
+
+                <label for="forgotEmail">E-mail</label>
+                <div class="input-wrap">
+                <span class="input-icon"><i class="bi bi-envelope"></i></span>
+                <input id="forgotEmail" type="email" placeholder="utilizador@empresa.ao" required />
+                </div>
+                </div>
                 <p class="form-success" id="forgotMessage" role="status"></p>
-                <div class="modal-footer"><span>Sem envio real nesta fase</span><button class="btn btn-primary" type="submit">Continuar <i class="bi bi-arrow-right"></i></button></div>
+                <div class="modal-footer">
+                <span>Sem envio real nesta fase</span>
+                <button class="btn btn-primary" type="submit">Continuar <i class="bi bi-arrow-right"></i></button>
+                </div>
             </form>
         </section>
     </div>
@@ -188,7 +233,9 @@
             <h2 id="settingsTitle">Definições</h2>
             <p>Configure a apresentação desta demonstração.</p>
             </div>
+
             <button class="icon-button" data-close="settingsModal" aria-label="Fechar"><i class="bi bi-x-lg"></i></button>
+            
             </div>
 
             <div class="settings-content">
