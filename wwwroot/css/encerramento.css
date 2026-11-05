@@ -1,0 +1,44 @@
+/* Encerramento · DYLANDE Contabil */
+
+
+.check-row {
+    min-height:62px;
+    display:flex;
+    align-items:center;
+    gap:12px;
+    border-bottom:1px solid #eef1f5;
+}
+.check-row:last-child {
+    border-bottom:0;
+}
+.check-row>div {
+    flex:1;
+}
+.check-row strong {
+    display:block;
+    color:#34445a;
+    font-size:10px;
+}
+.check-row small {
+    display:block;
+    margin-top:4px;
+    color:#929dab;
+    font-size:8px;
+}
+.check {
+    width:25px;
+    height:25px;
+    display:grid;
+    place-items:center;
+    border-radius:7px;
+    font-weight:800;
+    font-size:11px;
+}
+.check.done {
+    background:#eaf8f1;
+    color:#16845b;
+}
+.check.pending {
+    background:#fff6df;
+    color:#a76b08;
+}

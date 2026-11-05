@@ -1,0 +1,497 @@
+@{
+    var empresa=(string)(ViewBag.Empresa ?? "");
+}
+<div class="page-head">
+ <div>
+  <span class="eyebrow">
+   CONTABILIDADE · MOVIMENTOS
+  </span>
+  <h1>
+   Lançamentos
+  </h1>
+  <p>
+   Registo, conferência e aprovação dos movimentos contabilísticos.
+  </p>
+ </div>
+ <div class="page-actions">
+  <button class="btn btn-secondary" onclick="showToast('Filtro avançado disponível na versão ligada ao backend.')">
+   Filtros
+  </button>
+  <button class="btn btn-primary" onclick="openModal('entryModal')">
+   <i class="bi bi-plus-lg"></i> Novo lançamento
+  </button>
+ </div>
+</div>
+<div class="notice">
+ <span>
+  i
+ </span>
+ <div>
+  <b>
+   Regra de conferência:
+  </b>
+  um lançamento só pode ser aprovado quando o total a débito for exactamente igual ao total a crédito.
+ </div>
+</div>
+<div class="grid grid-4 section-bottom">
+ <article class="card stat-card">
+  <span class="stat-icon">
+   <i class="bi bi-plus-lg"></i>
+  </span>
+  <div>
+   <small>
+    Este mês
+   </small>
+   <strong>
+    284
+   </strong>
+   <span>
+    Lançamentos
+   </span>
+  </div>
+ </article>
+ <article class="card stat-card">
+  <span class="stat-icon">
+   ◷
+  </span>
+  <div>
+   <small>
+    Pendentes
+   </small>
+   <strong>
+    17
+   </strong>
+   <span>
+    Aguardam aprovação
+   </span>
+  </div>
+ </article>
+ <article class="card stat-card">
+  <span class="stat-icon">
+   <i class="bi bi-check-lg"></i>
+  </span>
+  <div>
+   <small>
+    Aprovados
+   </small>
+   <strong>
+    251
+   </strong>
+   <span>
+    Prontos para contabilizar
+   </span>
+  </div>
+ </article>
+ <article class="card stat-card">
+  <span class="stat-icon">
+   !
+  </span>
+  <div>
+   <small>
+    Com anexos
+   </small>
+   <strong>
+    96
+   </strong>
+   <span>
+    Documentos de suporte
+   </span>
+  </div>
+ </article>
+</div>
+<section class="panel">
+ <div class="panel-head">
+  <div>
+   <h2>
+    Movimentos recentes
+   </h2>
+   <p>
+    Todos os campos essenciais do lançamento.
+   </p>
+  </div>
+  <span class="badge badge-neutral">
+   284 no período
+  </span>
+ </div>
+ <div class="toolbar">
+  <label class="search-box">
+   <span>
+    <i class="bi bi-search"></i>
+   </span>
+   <input id="entrySearch" oninput="filterTable('entrySearch','entriesTable')" placeholder="Pesquisar número, documento ou descrição..."/>
+  </label>
+  <label class="field">
+   <span>
+    Estado
+   </span>
+   <select>
+    <option>
+     Todos
+    </option>
+    <option>
+     Pendente
+    </option>
+    <option>
+     Aprovado
+    </option>
+    <option>
+     Contabilizado
+    </option>
+   </select>
+  </label>
+  <label class="field">
+   <span>
+    Diário
+   </span>
+   <select>
+    <option>
+     Todos
+    </option>
+    <option>
+     Operações diversas
+    </option>
+    <option>
+     Compras
+    </option>
+    <option>
+     Vendas
+    </option>
+    <option>
+     Bancos
+    </option>
+   </select>
+  </label>
+ </div>
+ <div class="table-wrap">
+  <table class="data-table" id="entriesTable">
+   <thead>
+    <tr>
+     <th>
+      N.º
+     </th>
+     <th>
+      DATA
+     </th>
+     <th>
+      DIÁRIO
+     </th>
+     <th>
+      DOCUMENTO
+     </th>
+     <th>
+      DESCRIÇÃO
+     </th>
+     <th>
+      CONTA
+     </th>
+     <th class="amount">
+      DÉBITO
+     </th>
+     <th class="amount">
+      CRÉDITO
+     </th>
+     <th>
+      ESTADO
+     </th>
+     <th>
+      ANEXOS
+     </th>
+    </tr>
+   </thead>
+   <tbody>
+    <tr>
+     <td>
+      <b>
+       000284
+      </b>
+     </td>
+     <td>
+      05/11/2026
+     </td>
+     <td>
+      Operações diversas
+     </td>
+     <td>
+      FT 2026/143
+     </td>
+     <td>
+      Pagamento a fornecedor
+     </td>
+     <td>
+      4.1.02
+     </td>
+     <td class="amount">
+      —
+     </td>
+     <td class="amount">
+      425.000,00
+     </td>
+     <td>
+      <span class="badge badge-success">
+       Contabilizado
+      </span>
+     </td>
+     <td>
+      1 ficheiro
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <b>
+       000283
+      </b>
+     </td>
+     <td>
+      05/11/2026
+     </td>
+     <td>
+      Vendas
+     </td>
+     <td>
+      RC 2026/088
+     </td>
+     <td>
+      Recebimento de cliente
+     </td>
+     <td>
+      4.1.02
+     </td>
+     <td class="amount">
+      680.000,00
+     </td>
+     <td class="amount">
+      —
+     </td>
+     <td>
+      <span class="badge badge-success">
+       Aprovado
+      </span>
+     </td>
+     <td>
+      2 ficheiros
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <b>
+       000282
+      </b>
+     </td>
+     <td>
+      04/11/2026
+     </td>
+     <td>
+      Compras
+     </td>
+     <td>
+      FT 2026/211
+     </td>
+     <td>
+      Compra de mercadorias
+     </td>
+     <td>
+      2.1.01
+     </td>
+     <td class="amount">
+      1.240.000,00
+     </td>
+     <td class="amount">
+      —
+     </td>
+     <td>
+      <span class="badge badge-warning">
+       Pendente
+      </span>
+     </td>
+     <td>
+      1 ficheiro
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <b>
+       000281
+      </b>
+     </td>
+     <td>
+      04/11/2026
+     </td>
+     <td>
+      Bancos
+     </td>
+     <td>
+      TRF 0882
+     </td>
+     <td>
+      Transferência entre contas
+     </td>
+     <td>
+      4.1.01
+     </td>
+     <td class="amount">
+      950.000,00
+     </td>
+     <td class="amount">
+      950.000,00
+     </td>
+     <td>
+      <span class="badge badge-success">
+       Contabilizado
+      </span>
+     </td>
+     <td>
+      —
+     </td>
+    </tr>
+   </tbody>
+  </table>
+ </div>
+</section>
+<div class="modal-backdrop" id="entryModal">
+ <div class="modal">
+  <div class="modal-head">
+   <div>
+    <h2>
+     Novo lançamento
+    </h2>
+    <p>
+     Registe a operação e as respectivas linhas contabilísticas.
+    </p>
+   </div>
+   <button class="modal-close" data-close="entryModal">
+    ×
+   </button>
+  </div>
+  <form class="js-demo-submit">
+   <div class="modal-body">
+    <div class="form-grid">
+     <label class="field">
+      <span>
+       N.º do lançamento
+      </span>
+      <input readonly="" value="000285"/>
+     </label>
+     <label class="field">
+      <span>
+       Data *
+      </span>
+      <input type="date" value="2026-11-05"/>
+     </label>
+     <label class="field">
+      <span>
+       Diário *
+      </span>
+      <select>
+       <option>
+        Operações diversas
+       </option>
+       <option>
+        Compras
+       </option>
+       <option>
+        Vendas
+       </option>
+       <option>
+        Bancos
+       </option>
+      </select>
+     </label>
+     <label class="field">
+      <span>
+       Documento de origem
+      </span>
+      <input placeholder="Factura, recibo, transferência..."/>
+     </label>
+     <label class="field field-full">
+      <span>
+       Descrição / histórico *
+      </span>
+      <textarea placeholder="Descreva a operação contabilística" required="" rows="3"></textarea>
+     </label>
+    </div>
+    <div class="form-block-gap">
+     <h3 class="form-section-title">
+      Linhas contabilísticas
+     </h3>
+     <table class="data-table">
+      <thead>
+       <tr>
+        <th>
+         CONTA
+        </th>
+        <th>
+         DESIGNAÇÃO
+        </th>
+        <th>
+         DÉBITO
+        </th>
+        <th>
+         CRÉDITO
+        </th>
+       </tr>
+      </thead>
+      <tbody>
+       <tr>
+        <td>
+         4.1.02
+        </td>
+        <td>
+         Depósitos à ordem
+        </td>
+        <td>
+         <input class="field input input-amount" value="0,00"/>
+        </td>
+        <td>
+         <input class="input-amount" value="425.000,00"/>
+        </td>
+       </tr>
+       <tr>
+        <td>
+         3.2.01
+        </td>
+        <td>
+         Fornecedores nacionais
+        </td>
+        <td>
+         <input class="input-amount" value="425.000,00"/>
+        </td>
+        <td>
+         <input class="input-amount" value="0,00"/>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+    </div>
+    <div class="form-grid form-grid-gap">
+     <label class="field">
+      <span>
+       Anexos
+      </span>
+      <input multiple="" type="file"/>
+     </label>
+     <label class="field">
+      <span>
+       Estado inicial
+      </span>
+      <select>
+       <option>
+        Pendente
+       </option>
+       <option>
+        Rascunho
+       </option>
+      </select>
+     </label>
+    </div>
+   </div>
+   <div class="modal-foot">
+    <button class="btn btn-secondary" data-close="entryModal" type="button">
+     Guardar rascunho
+    </button>
+    <button class="btn btn-primary" type="submit">
+     Submeter para aprovação
+    </button>
+   </div>
+  </form>
+ </div>
+</div>

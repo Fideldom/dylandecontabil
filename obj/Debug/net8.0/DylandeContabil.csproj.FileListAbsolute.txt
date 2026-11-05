@@ -1,3 +1,10 @@
+C:\Users\PC\Desktop\DylandeContabil\bin\Debug\net8.0\DylandeContabil.staticwebassets.runtime.json
+C:\Users\PC\Desktop\DylandeContabil\bin\Debug\net8.0\DylandeContabil.staticwebassets.endpoints.json
+C:\Users\PC\Desktop\DylandeContabil\bin\Debug\net8.0\DylandeContabil.exe
+C:\Users\PC\Desktop\DylandeContabil\bin\Debug\net8.0\DylandeContabil.deps.json
+C:\Users\PC\Desktop\DylandeContabil\bin\Debug\net8.0\DylandeContabil.runtimeconfig.json
+C:\Users\PC\Desktop\DylandeContabil\bin\Debug\net8.0\DylandeContabil.dll
+C:\Users\PC\Desktop\DylandeContabil\bin\Debug\net8.0\DylandeContabil.pdb
 C:\Users\PC\Desktop\DylandeContabil\obj\Debug\net8.0\rpswa.dswa.cache.json
 C:\Users\PC\Desktop\DylandeContabil\obj\Debug\net8.0\DylandeContabil.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\PC\Desktop\DylandeContabil\obj\Debug\net8.0\DylandeContabil.AssemblyInfoInputs.cache
@@ -6,13 +13,7 @@ C:\Users\PC\Desktop\DylandeContabil\obj\Debug\net8.0\DylandeContabil.csproj.Core
 C:\Users\PC\Desktop\DylandeContabil\obj\Debug\net8.0\DylandeContabil.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\PC\Desktop\DylandeContabil\obj\Debug\net8.0\DylandeContabil.RazorAssemblyInfo.cache
 C:\Users\PC\Desktop\DylandeContabil\obj\Debug\net8.0\DylandeContabil.RazorAssemblyInfo.cs
-C:\Users\PC\Desktop\DylandeContabil\bin\Debug\net8.0\DylandeContabil.staticwebassets.runtime.json
-C:\Users\PC\Desktop\DylandeContabil\bin\Debug\net8.0\DylandeContabil.staticwebassets.endpoints.json
-C:\Users\PC\Desktop\DylandeContabil\bin\Debug\net8.0\DylandeContabil.exe
-C:\Users\PC\Desktop\DylandeContabil\bin\Debug\net8.0\DylandeContabil.deps.json
-C:\Users\PC\Desktop\DylandeContabil\bin\Debug\net8.0\DylandeContabil.runtimeconfig.json
-C:\Users\PC\Desktop\DylandeContabil\bin\Debug\net8.0\DylandeContabil.dll
-C:\Users\PC\Desktop\DylandeContabil\bin\Debug\net8.0\DylandeContabil.pdb
+C:\Users\PC\Desktop\DylandeContabil\obj\Debug\net8.0\DylandeContabil.sourcelink.json
 C:\Users\PC\Desktop\DylandeContabil\obj\Debug\net8.0\rjimswa.dswa.cache.json
 C:\Users\PC\Desktop\DylandeContabil\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
 C:\Users\PC\Desktop\DylandeContabil\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json

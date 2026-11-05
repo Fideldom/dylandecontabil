@@ -1,0 +1,62 @@
+/* Definições · DYLANDE Contabil */
+
+
+.settings-layout {
+    display:grid;
+    grid-template-columns:230px minmax(0,1fr);
+    gap:14px;
+}
+.settings-nav {
+    padding:10px;
+    height:max-content;
+}
+.settings-title {
+    padding:8px 10px 10px;
+    color:#8b96a5;
+    font-size:8px;
+    font-weight:800;
+    letter-spacing:1px;
+}
+.settings-tab {
+    display:block;
+    width:100%;
+    padding:10px;
+    text-align:left;
+    border:0;
+    border-radius:7px;
+    background:transparent;
+    color:#6c7a8e;
+    font-size:10px;
+    font-weight:600;
+}
+.settings-tab:hover {
+    background:#f6f8fb;
+    color:#315c93;
+}
+.settings-tab.active {
+    background:#edf4ff;
+    color:#1e5bb8;
+}
+.settings-pane {
+    display:none;
+}
+.settings-pane.active {
+    display:block;
+}
+@media(max-width:850px) {
+    .settings-layout {
+        grid-template-columns:1fr;
+    }
+    .settings-nav {
+        display:flex;
+        overflow-x:auto;
+        gap:4px;
+    }
+    .settings-title {
+        display:none;
+    }
+    .settings-tab {
+        white-space:nowrap;
+        width:auto;
+    }
+}

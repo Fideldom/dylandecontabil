@@ -1,0 +1,531 @@
+@{
+    var empresa=(string)(ViewBag.Empresa ?? "");
+}
+<div class="page-head">
+ <div>
+  <span class="eyebrow">
+   CONTABILIDADE · ESTRUTURA
+  </span>
+  <h1>
+   Plano de Contas
+  </h1>
+  <p>
+   Estrutura contabilística, classificação e natureza das contas.
+  </p>
+ </div>
+ <div class="page-actions">
+  <button class="btn btn-secondary" onclick="exportTable('accountsTable','plano-de-contas.xls')">
+   Exportar Excel
+  </button>
+  <button class="btn btn-primary" onclick="openModal('accountModal')">
+   <i class="bi bi-plus-lg"></i> Nova conta
+  </button>
+ </div>
+</div>
+<div class="grid grid-4 section-bottom">
+ <article class="card stat-card">
+  <span class="stat-icon">
+   <i class="bi bi-list"></i>
+  </span>
+  <div>
+   <small>
+    Total de contas
+   </small>
+   <strong id="accountTotal">
+    15
+   </strong>
+   <span>
+    Plano actual
+   </span>
+  </div>
+ </article>
+ <article class="card stat-card">
+  <span class="stat-icon">
+   <i class="bi bi-diagram-3"></i>
+  </span>
+  <div>
+   <small>
+    Sintéticas
+   </small>
+   <strong>
+    7
+   </strong>
+   <span>
+    Contas de agrupamento
+   </span>
+  </div>
+ </article>
+ <article class="card stat-card">
+  <span class="stat-icon">
+   <i class="bi bi-diagram-2"></i>
+  </span>
+  <div>
+   <small>
+    Analíticas
+   </small>
+   <strong>
+    8
+   </strong>
+   <span>
+    Contas de movimento
+   </span>
+  </div>
+ </article>
+ <article class="card stat-card">
+  <span class="stat-icon">
+   <i class="bi bi-check-lg"></i>
+  </span>
+  <div>
+   <small>
+    Activas
+   </small>
+   <strong>
+    14
+   </strong>
+   <span>
+    Disponíveis para lançamentos
+   </span>
+  </div>
+ </article>
+</div>
+<section class="panel">
+ <div class="panel-head">
+  <div>
+   <h2>
+    Estrutura de contas
+   </h2>
+   <p>
+    Código, classe contabilística, hierarquia, natureza e estado.
+   </p>
+  </div>
+  <span class="badge badge-neutral">
+   Exercício 2026
+  </span>
+ </div>
+ <div class="toolbar">
+  <label class="search-box">
+   <span>
+    <i class="bi bi-search"></i>
+   </span>
+   <input id="accountSearch" oninput="filterTable('accountSearch','accountsTable')" placeholder="Pesquisar código ou nome..."/>
+  </label>
+  <label class="field">
+   <span>
+    Classe
+   </span>
+   <select>
+    <option>
+     Todas
+    </option>
+    <option>
+     Patrimonial
+    </option>
+    <option>
+     Resultados
+    </option>
+   </select>
+  </label>
+  <label class="field">
+   <span>
+    Estado
+   </span>
+   <select>
+    <option>
+     Todas
+    </option>
+    <option>
+     Activa
+    </option>
+    <option>
+     Inactiva
+    </option>
+   </select>
+  </label>
+ </div>
+ <div class="table-wrap">
+  <table class="data-table" id="accountsTable">
+   <thead>
+    <tr>
+     <th>
+      CÓDIGO
+     </th>
+     <th>
+      NOME DA CONTA
+     </th>
+     <th>
+      CLASSE
+     </th>
+     <th>
+      CONTA SUPERIOR
+     </th>
+     <th>
+      TIPO
+     </th>
+     <th>
+      NATUREZA
+     </th>
+     <th>
+      ESTADO
+     </th>
+     <th>
+      ACÇÕES
+     </th>
+    </tr>
+   </thead>
+   <tbody>
+    <tr>
+     <td>
+      <b>
+       1
+      </b>
+     </td>
+     <td>
+      Meios fixos e investimentos
+     </td>
+     <td>
+      Patrimonial
+     </td>
+     <td>
+      —
+     </td>
+     <td>
+      Sintética
+     </td>
+     <td>
+      Débito
+     </td>
+     <td>
+      <span class="badge badge-success">
+       Activa
+      </span>
+     </td>
+     <td>
+      <button class="btn btn-secondary btn-small" onclick="openModal('accountModal')">
+       Editar
+      </button>
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <b>
+       1.1.01
+      </b>
+     </td>
+     <td>
+      Terrenos e recursos naturais
+     </td>
+     <td>
+      Patrimonial
+     </td>
+     <td>
+      1.1
+     </td>
+     <td>
+      Analítica
+     </td>
+     <td>
+      Débito
+     </td>
+     <td>
+      <span class="badge badge-success">
+       Activa
+      </span>
+     </td>
+     <td>
+      <button class="btn btn-secondary btn-small" onclick="openModal('accountModal')">
+       Consultar
+      </button>
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <b>
+       2.1.01
+      </b>
+     </td>
+     <td>
+      Mercadorias em armazém
+     </td>
+     <td>
+      Patrimonial
+     </td>
+     <td>
+      2.1
+     </td>
+     <td>
+      Analítica
+     </td>
+     <td>
+      Débito
+     </td>
+     <td>
+      <span class="badge badge-success">
+       Activa
+      </span>
+     </td>
+     <td>
+      <button class="btn btn-secondary btn-small" onclick="openModal('accountModal')">
+       Editar
+      </button>
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <b>
+       3.1.01
+      </b>
+     </td>
+     <td>
+      Clientes nacionais
+     </td>
+     <td>
+      Terceiros
+     </td>
+     <td>
+      3.1
+     </td>
+     <td>
+      Analítica
+     </td>
+     <td>
+      Débito
+     </td>
+     <td>
+      <span class="badge badge-success">
+       Activa
+      </span>
+     </td>
+     <td>
+      <button class="btn btn-secondary btn-small" onclick="openModal('accountModal')">
+       Editar
+      </button>
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <b>
+       4.1.01
+      </b>
+     </td>
+     <td>
+      Caixa
+     </td>
+     <td>
+      Meios monetários
+     </td>
+     <td>
+      4
+     </td>
+     <td>
+      Analítica
+     </td>
+     <td>
+      Débito
+     </td>
+     <td>
+      <span class="badge badge-success">
+       Activa
+      </span>
+     </td>
+     <td>
+      <button class="btn btn-secondary btn-small" onclick="openModal('accountModal')">
+       Editar
+      </button>
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <b>
+       4.1.02
+      </b>
+     </td>
+     <td>
+      Depósitos à ordem
+     </td>
+     <td>
+      Meios monetários
+     </td>
+     <td>
+      4
+     </td>
+     <td>
+      Analítica
+     </td>
+     <td>
+      Crédito
+     </td>
+     <td>
+      <span class="badge badge-neutral">
+       Inactiva
+      </span>
+     </td>
+     <td>
+      <button class="btn btn-secondary btn-small" onclick="openModal('accountModal')">
+       Consultar
+      </button>
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <b>
+       6.1.01
+      </b>
+     </td>
+     <td>
+      Fornecimentos e serviços externos
+     </td>
+     <td>
+      Resultados
+     </td>
+     <td>
+      6
+     </td>
+     <td>
+      Analítica
+     </td>
+     <td>
+      Débito
+     </td>
+     <td>
+      <span class="badge badge-success">
+       Activa
+      </span>
+     </td>
+     <td>
+      <button class="btn btn-secondary btn-small" onclick="openModal('accountModal')">
+       Editar
+      </button>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+ </div>
+</section>
+<div class="page-footer">
+ <span>
+  15 contas · 7 sintéticas · 8 analíticas
+ </span>
+ <span>
+  Os saldos não fazem parte do plano de contas.
+ </span>
+</div>
+<div class="modal-backdrop" id="accountModal">
+ <div class="modal">
+  <div class="modal-head">
+   <div>
+    <h2>
+     Nova conta contabilística
+    </h2>
+    <p>
+     Defina a estrutura e a natureza da conta.
+    </p>
+   </div>
+   <button class="modal-close" data-close="accountModal">
+    ×
+   </button>
+  </div>
+  <form class="js-demo-submit">
+   <div class="modal-body">
+    <div class="form-grid">
+     <label class="field">
+      <span>
+       Código da conta *
+      </span>
+      <input placeholder="Ex.: 3.1.01" required=""/>
+     </label>
+     <label class="field">
+      <span>
+       Classe contabilística *
+      </span>
+      <select>
+       <option>
+        Patrimonial
+       </option>
+       <option>
+        Resultados
+       </option>
+       <option>
+        Terceiros
+       </option>
+       <option>
+        Orçamental
+       </option>
+      </select>
+     </label>
+     <label class="field field-full">
+      <span>
+       Nome da conta *
+      </span>
+      <input placeholder="Designação oficial da conta" required=""/>
+     </label>
+     <label class="field">
+      <span>
+       Conta superior
+      </span>
+      <select>
+       <option>
+        Sem conta superior
+       </option>
+       <option>
+        3 — Terceiros
+       </option>
+       <option>
+        3.1 — Clientes
+       </option>
+       <option>
+        4 — Meios monetários
+       </option>
+      </select>
+     </label>
+     <label class="field">
+      <span>
+       Tipo de conta
+      </span>
+      <select>
+       <option>
+        Analítica
+       </option>
+       <option>
+        Sintética
+       </option>
+      </select>
+     </label>
+     <label class="field">
+      <span>
+       Natureza
+      </span>
+      <select>
+       <option>
+        Débito
+       </option>
+       <option>
+        Crédito
+       </option>
+      </select>
+     </label>
+     <label class="field">
+      <span>
+       Estado
+      </span>
+      <select>
+       <option>
+        Activa
+       </option>
+       <option>
+        Inactiva
+       </option>
+      </select>
+     </label>
+    </div>
+   </div>
+   <div class="modal-foot">
+    <button class="btn btn-secondary" data-close="accountModal" type="button">
+     Cancelar
+    </button>
+    <button class="btn btn-primary" type="submit">
+     Guardar conta
+    </button>
+   </div>
+  </form>
+ </div>
+</div>

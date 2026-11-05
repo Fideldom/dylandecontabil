@@ -1,0 +1,261 @@
+<div class="page-head">
+ <div>
+  <span class="eyebrow">
+   LIVROS CONTABILÍSTICOS · EXTRATO
+  </span>
+  <h1>
+   Razão Geral
+  </h1>
+  <p>
+   Movimentos e saldo acumulado de uma conta contabilística.
+  </p>
+ </div>
+ <div class="page-actions">
+  <button class="btn btn-secondary" onclick="printReport('Razão Geral · DYLANDE')">
+   Imprimir extrato
+  </button>
+  <button class="btn btn-primary" onclick="showToast('Extrato preparado para exportação.')">
+   Exportar
+  </button>
+ </div>
+</div>
+<section class="panel section-bottom">
+ <div class="toolbar">
+  <label class="field field-account">
+   <span>
+    Conta contabilística
+   </span>
+   <select>
+    <option>
+     4.1.02 — Depósitos à ordem
+    </option>
+    <option>
+     4.1.01 — Caixa
+    </option>
+    <option>
+     3.1.01 — Clientes nacionais
+    </option>
+    <option>
+     2.1.01 — Mercadorias em armazém
+    </option>
+   </select>
+  </label>
+  <label class="field">
+   <span>
+    Data inicial
+   </span>
+   <input type="date" value="2026-11-01"/>
+  </label>
+  <label class="field">
+   <span>
+    Data final
+   </span>
+   <input type="date" value="2026-11-05"/>
+  </label>
+  <button class="btn btn-primary" onclick="showToast('Extrato actualizado.')">
+   Consultar conta
+  </button>
+ </div>
+</section>
+<section class="panel">
+ <div class="panel-head">
+  <div>
+   <span class="eyebrow">
+    EXTRATO POR CONTA
+   </span>
+   <h2>
+    4.1.02 — Depósitos à ordem
+   </h2>
+   <p>
+    Natureza: Débito · Período: 01/11/2026 a 05/11/2026
+   </p>
+  </div>
+  <span class="badge badge-success">
+   Conta activa
+  </span>
+ </div>
+ <div class="kpi-strip">
+  <div class="kpi-item">
+   <small>
+    Saldo inicial
+   </small>
+   <strong>
+    4.820.000,00
+   </strong>
+  </div>
+  <div class="kpi-item">
+   <small>
+    Movimentos a débito
+   </small>
+   <strong>
+    2.430.000,00
+   </strong>
+  </div>
+  <div class="kpi-item">
+   <small>
+    Movimentos a crédito
+   </small>
+   <strong>
+    1.125.000,00
+   </strong>
+  </div>
+  <div class="kpi-item">
+   <small>
+    Saldo final
+   </small>
+   <strong>
+    6.125.000,00
+   </strong>
+  </div>
+ </div>
+ <div class="table-wrap">
+  <table class="data-table">
+   <thead>
+    <tr>
+     <th>
+      DATA
+     </th>
+     <th>
+      LANÇAMENTO
+     </th>
+     <th>
+      HISTÓRICO
+     </th>
+     <th>
+      DOCUMENTO
+     </th>
+     <th class="amount">
+      DÉBITO
+     </th>
+     <th class="amount">
+      CRÉDITO
+     </th>
+     <th class="amount">
+      SALDO
+     </th>
+    </tr>
+   </thead>
+   <tbody>
+    <tr>
+     <td>
+      01/11/2026
+     </td>
+     <td>
+      —
+     </td>
+     <td>
+      Saldo transportado
+     </td>
+     <td>
+      —
+     </td>
+     <td class="amount">
+      —
+     </td>
+     <td class="amount">
+      —
+     </td>
+     <td class="amount">
+      <b>
+       4.820.000,00
+      </b>
+     </td>
+    </tr>
+    <tr>
+     <td>
+      03/11/2026
+     </td>
+     <td>
+      000276
+     </td>
+     <td>
+      Recebimento cliente
+     </td>
+     <td>
+      RC 2026/082
+     </td>
+     <td class="amount">
+      750.000,00
+     </td>
+     <td class="amount">
+      —
+     </td>
+     <td class="amount">
+      5.570.000,00
+     </td>
+    </tr>
+    <tr>
+     <td>
+      04/11/2026
+     </td>
+     <td>
+      000281
+     </td>
+     <td>
+      Transferência entre contas
+     </td>
+     <td>
+      TRF 0882
+     </td>
+     <td class="amount">
+      950.000,00
+     </td>
+     <td class="amount">
+      —
+     </td>
+     <td class="amount">
+      6.520.000,00
+     </td>
+    </tr>
+    <tr>
+     <td>
+      05/11/2026
+     </td>
+     <td>
+      000283
+     </td>
+     <td>
+      Recebimento de cliente
+     </td>
+     <td>
+      RC 2026/088
+     </td>
+     <td class="amount">
+      680.000,00
+     </td>
+     <td class="amount">
+      —
+     </td>
+     <td class="amount">
+      7.200.000,00
+     </td>
+    </tr>
+    <tr>
+     <td>
+      05/11/2026
+     </td>
+     <td>
+      000284
+     </td>
+     <td>
+      Pagamento a fornecedor
+     </td>
+     <td>
+      FT 2026/143
+     </td>
+     <td class="amount">
+      —
+     </td>
+     <td class="amount">
+      425.000,00
+     </td>
+     <td class="amount">
+      <b>
+       6.775.000,00
+      </b>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+ </div>
+</section>

@@ -1,0 +1,732 @@
+<div class="page-head">
+ <div>
+  <span class="eyebrow">
+   ADMINISTRAÇÃO · CONFIGURAÇÃO
+  </span>
+  <h1>
+   Definições
+  </h1>
+  <p>
+   Parâmetros da empresa, utilizadores, exercícios e controlo do sistema.
+  </p>
+ </div>
+ <div class="page-actions">
+  <button class="btn btn-secondary" onclick="showToast('As alterações serão persistidas no backend na próxima fase.')">
+   Guardar alterações
+  </button>
+ </div>
+</div>
+<div class="settings-layout">
+ <aside class="settings-nav card">
+  <div class="settings-title">
+   CONFIGURAÇÃO
+  </div>
+  <button class="settings-tab active" data-tab="empresa">
+   Dados da empresa
+  </button>
+  <button class="settings-tab" data-tab="exercicios">
+   Exercícios contabilísticos
+  </button>
+  <button class="settings-tab" data-tab="utilizadores">
+   Utilizadores
+  </button>
+  <button class="settings-tab" data-tab="perfis">
+   Perfis e permissões
+  </button>
+  <button class="settings-tab" data-tab="diarios">
+   Diários
+  </button>
+  <button class="settings-tab" data-tab="moeda">
+   Moeda
+  </button>
+  <button class="settings-tab" data-tab="parametros">
+   Parâmetros do sistema
+  </button>
+  <button class="settings-tab" data-tab="auditoria">
+   Auditoria e segurança
+  </button>
+ </aside>
+ <div class="settings-content">
+  <section class="settings-pane active" id="tab-empresa">
+   <div class="panel">
+    <div class="panel-head">
+     <div>
+      <h2>
+       Dados da empresa
+      </h2>
+      <p>
+       Informação base utilizada nos documentos contabilísticos.
+      </p>
+     </div>
+    </div>
+    <div class="form-section">
+     <div class="form-grid">
+      <label class="field">
+       <span>
+        Denominação social *
+       </span>
+       <input value="DYLANDE — Prestação de Serviços e Comércio"/>
+      </label>
+      <label class="field">
+       <span>
+        NIF
+       </span>
+       <input value="5000000000"/>
+      </label>
+      <label class="field">
+       <span>
+        Morada
+       </span>
+       <input value="Luanda, Angola"/>
+      </label>
+      <label class="field">
+       <span>
+        Telefone
+       </span>
+       <input value="+244 900 000 000"/>
+      </label>
+      <label class="field">
+       <span>
+        E-mail institucional
+       </span>
+       <input value="contabilidade@dylande.ao"/>
+      </label>
+      <label class="field">
+       <span>
+        País
+       </span>
+       <select>
+        <option>
+         Angola
+        </option>
+       </select>
+      </label>
+      <label class="field">
+       <span>
+        Regime contabilístico
+       </span>
+       <select>
+        <option>
+         Regime geral
+        </option>
+        <option>
+         Regime simplificado
+        </option>
+       </select>
+      </label>
+      <label class="field">
+       <span>
+        Estado
+       </span>
+       <select>
+        <option>
+         Activa
+        </option>
+        <option>
+         Inactiva
+        </option>
+       </select>
+      </label>
+     </div>
+    </div>
+   </div>
+  </section>
+  <section class="settings-pane" id="tab-exercicios">
+   <div class="panel">
+    <div class="panel-head">
+     <div>
+      <h2>
+       Exercícios contabilísticos
+      </h2>
+      <p>
+       Gestão de períodos e estados de abertura/encerramento.
+      </p>
+     </div>
+     <button class="btn btn-primary btn-small" onclick="showToast('Novo exercício preparado.')">
+      <i class="bi bi-plus-lg"></i> Novo exercício
+     </button>
+    </div>
+    <div class="table-wrap">
+     <table class="data-table">
+      <thead>
+       <tr>
+        <th>
+         EXERCÍCIO
+        </th>
+        <th>
+         INÍCIO
+        </th>
+        <th>
+         FIM
+        </th>
+        <th>
+         ESTADO
+        </th>
+        <th>
+         ABERTURA
+        </th>
+       </tr>
+      </thead>
+      <tbody>
+       <tr>
+        <td>
+         <b>
+          2026
+         </b>
+        </td>
+        <td>
+         01/01/2026
+        </td>
+        <td>
+         31/12/2026
+        </td>
+        <td>
+         <span class="badge badge-success">
+          Aberto
+         </span>
+        </td>
+        <td>
+         01/01/2026
+        </td>
+       </tr>
+       <tr>
+        <td>
+         <b>
+          2025
+         </b>
+        </td>
+        <td>
+         01/01/2025
+        </td>
+        <td>
+         31/12/2025
+        </td>
+        <td>
+         <span class="badge badge-neutral">
+          Encerrado
+         </span>
+        </td>
+        <td>
+         01/01/2025
+        </td>
+       </tr>
+      </tbody>
+     </table>
+    </div>
+   </div>
+  </section>
+  <section class="settings-pane" id="tab-utilizadores">
+   <div class="panel">
+    <div class="panel-head">
+     <div>
+      <h2>
+       Utilizadores
+      </h2>
+      <p>
+       Contas com acesso ao espaço contabilístico.
+      </p>
+     </div>
+     <button class="btn btn-primary btn-small" onclick="showToast('Convite de utilizador preparado.')">
+      <i class="bi bi-plus-lg"></i> Adicionar utilizador
+     </button>
+    </div>
+    <div class="table-wrap">
+     <table class="data-table">
+      <thead>
+       <tr>
+        <th>
+         UTILIZADOR
+        </th>
+        <th>
+         E-MAIL
+        </th>
+        <th>
+         PERFIL
+        </th>
+        <th>
+         ESTADO
+        </th>
+        <th>
+         ÚLTIMO ACESSO
+        </th>
+       </tr>
+      </thead>
+      <tbody>
+       <tr>
+        <td>
+         <b>
+          Fidel Maluto
+         </b>
+        </td>
+        <td>
+         fidel@empresa.ao
+        </td>
+        <td>
+         Administrador
+        </td>
+        <td>
+         <span class="badge badge-success">
+          Activo
+         </span>
+        </td>
+        <td>
+         05/11/2026 07:52
+        </td>
+       </tr>
+       <tr>
+        <td>
+         <b>
+          Ana Domingos
+         </b>
+        </td>
+        <td>
+         ana@empresa.ao
+        </td>
+        <td>
+         Contabilista
+        </td>
+        <td>
+         <span class="badge badge-success">
+          Activo
+         </span>
+        </td>
+        <td>
+         04/11/2026 17:18
+        </td>
+       </tr>
+      </tbody>
+     </table>
+    </div>
+   </div>
+  </section>
+  <section class="settings-pane" id="tab-perfis">
+   <div class="panel">
+    <div class="panel-head">
+     <div>
+      <h2>
+       Perfis e permissões
+      </h2>
+      <p>
+       Defina o nível de acesso por função.
+      </p>
+     </div>
+    </div>
+    <div class="table-wrap">
+     <table class="data-table">
+      <thead>
+       <tr>
+        <th>
+         PERFIL
+        </th>
+        <th>
+         LANÇAMENTOS
+        </th>
+        <th>
+         APROVAÇÃO
+        </th>
+        <th>
+         RELATÓRIOS
+        </th>
+        <th>
+         DEFINIÇÕES
+        </th>
+       </tr>
+      </thead>
+      <tbody>
+       <tr>
+        <td>
+         <b>
+          Administrador
+         </b>
+        </td>
+        <td>
+         Total
+        </td>
+        <td>
+         Total
+        </td>
+        <td>
+         Total
+        </td>
+        <td>
+         Total
+        </td>
+       </tr>
+       <tr>
+        <td>
+         <b>
+          Contabilista
+         </b>
+        </td>
+        <td>
+         Total
+        </td>
+        <td>
+         Sim
+        </td>
+        <td>
+         Total
+        </td>
+        <td>
+         Limitado
+        </td>
+       </tr>
+       <tr>
+        <td>
+         <b>
+          Operador
+         </b>
+        </td>
+        <td>
+         Criar
+        </td>
+        <td>
+         Não
+        </td>
+        <td>
+         Consulta
+        </td>
+        <td>
+         Não
+        </td>
+       </tr>
+      </tbody>
+     </table>
+    </div>
+   </div>
+  </section>
+  <section class="settings-pane" id="tab-diarios">
+   <div class="panel">
+    <div class="panel-head">
+     <div>
+      <h2>
+       Diários
+      </h2>
+      <p>
+       Tipos de diário usados no registo dos movimentos.
+      </p>
+     </div>
+     <button class="btn btn-primary btn-small" onclick="showToast('Novo diário preparado.')">
+      <i class="bi bi-plus-lg"></i> Novo diário
+     </button>
+    </div>
+    <div class="table-wrap">
+     <table class="data-table">
+      <thead>
+       <tr>
+        <th>
+         CÓDIGO
+        </th>
+        <th>
+         DESIGNAÇÃO
+        </th>
+        <th>
+         NUMERAÇÃO
+        </th>
+        <th>
+         ESTADO
+        </th>
+       </tr>
+      </thead>
+      <tbody>
+       <tr>
+        <td>
+         OD
+        </td>
+        <td>
+         Operações diversas
+        </td>
+        <td>
+         Automática
+        </td>
+        <td>
+         <span class="badge badge-success">
+          Activo
+         </span>
+        </td>
+       </tr>
+       <tr>
+        <td>
+         CP
+        </td>
+        <td>
+         Compras
+        </td>
+        <td>
+         Automática
+        </td>
+        <td>
+         <span class="badge badge-success">
+          Activo
+         </span>
+        </td>
+       </tr>
+       <tr>
+        <td>
+         VD
+        </td>
+        <td>
+         Vendas
+        </td>
+        <td>
+         Automática
+        </td>
+        <td>
+         <span class="badge badge-success">
+          Activo
+         </span>
+        </td>
+       </tr>
+       <tr>
+        <td>
+         BN
+        </td>
+        <td>
+         Bancos
+        </td>
+        <td>
+         Automática
+        </td>
+        <td>
+         <span class="badge badge-success">
+          Activo
+         </span>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+    </div>
+   </div>
+  </section>
+  <section class="settings-pane" id="tab-moeda">
+   <div class="panel">
+    <div class="panel-head">
+     <div>
+      <h2>
+       Moeda
+      </h2>
+      <p>
+       Configuração monetária da empresa.
+      </p>
+     </div>
+    </div>
+    <div class="form-section">
+     <div class="form-grid">
+      <label class="field">
+       <span>
+        Moeda base
+       </span>
+       <select>
+        <option>
+         AOA — Kwanza
+        </option>
+        <option>
+         USD — Dólar
+        </option>
+        <option>
+         EUR — Euro
+        </option>
+       </select>
+      </label>
+      <label class="field">
+       <span>
+        Casas decimais
+       </span>
+       <select>
+        <option>
+         2
+        </option>
+        <option>
+         0
+        </option>
+       </select>
+      </label>
+      <label class="field">
+       <span>
+        Formato
+       </span>
+       <select>
+        <option>
+         1.234.567,89
+        </option>
+        <option>
+         1,234,567.89
+        </option>
+       </select>
+      </label>
+     </div>
+    </div>
+   </div>
+  </section>
+  <section class="settings-pane" id="tab-parametros">
+   <div class="panel">
+    <div class="panel-head">
+     <div>
+      <h2>
+       Parâmetros do sistema
+      </h2>
+      <p>
+       Regras gerais da operação contabilística.
+      </p>
+     </div>
+    </div>
+    <div class="form-section">
+     <div class="form-grid">
+      <label class="field">
+       <span>
+        Numeração dos lançamentos
+       </span>
+       <select>
+        <option>
+         Automática por diário
+        </option>
+        <option>
+         Automática global
+        </option>
+       </select>
+      </label>
+      <label class="field">
+       <span>
+        Aprovação obrigatória
+       </span>
+       <select>
+        <option>
+         Sim
+        </option>
+        <option>
+         Não
+        </option>
+       </select>
+      </label>
+      <label class="field">
+       <span>
+        Permitir lançamento desequilibrado
+       </span>
+       <select>
+        <option>
+         Não
+        </option>
+        <option>
+         Sim
+        </option>
+       </select>
+      </label>
+      <label class="field">
+       <span>
+        Exigir documento de suporte
+       </span>
+       <select>
+        <option>
+         Sim
+        </option>
+        <option>
+         Não
+        </option>
+       </select>
+      </label>
+     </div>
+    </div>
+   </div>
+  </section>
+  <section class="settings-pane" id="tab-auditoria">
+   <div class="panel">
+    <div class="panel-head">
+     <div>
+      <h2>
+       Auditoria e segurança
+      </h2>
+      <p>
+       Rastreabilidade das operações realizadas no sistema.
+      </p>
+     </div>
+     <span class="badge badge-success">
+      Auditoria activa
+     </span>
+    </div>
+    <div class="table-wrap">
+     <table class="data-table">
+      <thead>
+       <tr>
+        <th>
+         DATA/HORA
+        </th>
+        <th>
+         UTILIZADOR
+        </th>
+        <th>
+         ACÇÃO
+        </th>
+        <th>
+         OBJECTO
+        </th>
+        <th>
+         ORIGEM
+        </th>
+       </tr>
+      </thead>
+      <tbody>
+       <tr>
+        <td>
+         05/11/2026 07:52
+        </td>
+        <td>
+         Fidel Maluto
+        </td>
+        <td>
+         Login
+        </td>
+        <td>
+         Sistema
+        </td>
+        <td>
+         Sessão web
+        </td>
+       </tr>
+       <tr>
+        <td>
+         05/11/2026 07:48
+        </td>
+        <td>
+         Ana Domingos
+        </td>
+        <td>
+         Aprovação
+        </td>
+        <td>
+         Lançamento 000283
+        </td>
+        <td>
+         Sessão web
+        </td>
+       </tr>
+       <tr>
+        <td>
+         04/11/2026 17:18
+        </td>
+        <td>
+         Ana Domingos
+        </td>
+        <td>
+         Edição
+        </td>
+        <td>
+         Conta 4.1.02
+        </td>
+        <td>
+         Sessão web
+        </td>
+       </tr>
+      </tbody>
+     </table>
+    </div>
+   </div>
+  </section>
+ </div>
+</div>
+@section Styles {
+    <link rel="stylesheet" href="~/css/definicoes.css" />
+}
+
+@section Scripts {
+    <script src="~/js/definicoes.js"></script>
+}

@@ -1,0 +1,271 @@
+<div class="page-head">
+ <div>
+  <span class="eyebrow">
+   RELATÓRIOS · BALANCETES
+  </span>
+  <h1>
+   Balancetes
+  </h1>
+  <p>
+   Conferência dos saldos contabilísticos por período.
+  </p>
+ </div>
+ <div class="page-actions">
+  <button class="btn btn-secondary" onclick="printReport('Balancete · DYLANDE')">
+   Imprimir
+  </button>
+  <button class="btn btn-secondary" onclick="exportTable('trialTable','balancete.xls')">
+   Exportar Excel
+  </button>
+  <button class="btn btn-primary" onclick="showToast('Relatório preparado.')">
+   Gerar balancete
+  </button>
+ </div>
+</div>
+<section class="panel section-bottom">
+ <div class="toolbar">
+  <label class="field">
+   <span>
+    Período contabilístico
+   </span>
+   <select>
+    <option>
+     Novembro 2026
+    </option>
+    <option>
+     Outubro 2026
+    </option>
+    <option>
+     3.º trimestre 2026
+    </option>
+    <option>
+     Exercício 2026
+    </option>
+   </select>
+  </label>
+  <label class="field">
+   <span>
+    Tipo
+   </span>
+   <select>
+    <option>
+     Balancete analítico
+    </option>
+    <option>
+     Balancete sintético
+    </option>
+    <option>
+     Acumulado
+    </option>
+   </select>
+  </label>
+  <button class="btn btn-primary" onclick="showToast('Balancete recalculado.')">
+   Actualizar
+  </button>
+ </div>
+</section>
+<section class="panel">
+ <div class="panel-head">
+  <div>
+   <h2>
+    Balancete analítico
+   </h2>
+   <p>
+    Valores em AOA · Novembro de 2026
+   </p>
+  </div>
+  <span class="badge badge-success">
+   Conferido
+  </span>
+ </div>
+ <div class="table-wrap">
+  <table class="data-table" id="trialTable">
+   <thead>
+    <tr>
+     <th>
+      CÓDIGO
+     </th>
+     <th>
+      CONTA
+     </th>
+     <th class="amount">
+      SALDO INICIAL
+     </th>
+     <th class="amount">
+      DÉBITOS
+     </th>
+     <th class="amount">
+      CRÉDITOS
+     </th>
+     <th class="amount">
+      SALDO DEVEDOR
+     </th>
+     <th class="amount">
+      SALDO CREDOR
+     </th>
+    </tr>
+   </thead>
+   <tbody>
+    <tr>
+     <td>
+      <b>
+       1
+      </b>
+     </td>
+     <td>
+      Meios fixos e investimentos
+     </td>
+     <td class="amount">
+      8.200.000,00
+     </td>
+     <td class="amount">
+      0,00
+     </td>
+     <td class="amount">
+      0,00
+     </td>
+     <td class="amount">
+      8.200.000,00
+     </td>
+     <td class="amount">
+      —
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <b>
+       2
+      </b>
+     </td>
+     <td>
+      Existências
+     </td>
+     <td class="amount">
+      3.120.000,00
+     </td>
+     <td class="amount">
+      1.240.000,00
+     </td>
+     <td class="amount">
+      320.000,00
+     </td>
+     <td class="amount">
+      4.040.000,00
+     </td>
+     <td class="amount">
+      —
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <b>
+       3
+      </b>
+     </td>
+     <td>
+      Terceiros
+     </td>
+     <td class="amount">
+      2.450.000,00
+     </td>
+     <td class="amount">
+      680.000,00
+     </td>
+     <td class="amount">
+      425.000,00
+     </td>
+     <td class="amount">
+      2.705.000,00
+     </td>
+     <td class="amount">
+      —
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <b>
+       4
+      </b>
+     </td>
+     <td>
+      Meios monetários
+     </td>
+     <td class="amount">
+      5.110.000,00
+     </td>
+     <td class="amount">
+      2.380.000,00
+     </td>
+     <td class="amount">
+      1.125.000,00
+     </td>
+     <td class="amount">
+      6.365.000,00
+     </td>
+     <td class="amount">
+      —
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <b>
+       6
+      </b>
+     </td>
+     <td>
+      Custos e perdas
+     </td>
+     <td class="amount">
+      1.880.000,00
+     </td>
+     <td class="amount">
+      425.000,00
+     </td>
+     <td class="amount">
+      0,00
+     </td>
+     <td class="amount">
+      2.305.000,00
+     </td>
+     <td class="amount">
+      —
+     </td>
+    </tr>
+    <tr class="table-total-row">
+     <td>
+     </td>
+     <td>
+      <b>
+       TOTAL
+      </b>
+     </td>
+     <td class="amount">
+      <b>
+       20.760.000,00
+      </b>
+     </td>
+     <td class="amount">
+      <b>
+       4.725.000,00
+      </b>
+     </td>
+     <td class="amount">
+      <b>
+       1.870.000,00
+      </b>
+     </td>
+     <td class="amount">
+      <b>
+       23.615.000,00
+      </b>
+     </td>
+     <td class="amount">
+      <b>
+       0,00
+      </b>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+ </div>
+</section>

@@ -1,4 +1,9 @@
-.vs/
+# Artefactos de compilação
 bin/
 obj/
+# Estado local do Visual Studio
+.vs/
 *.user
+*.suo
+# Publicação local
+publish/

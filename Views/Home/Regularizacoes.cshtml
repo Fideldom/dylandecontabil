@@ -1,0 +1,276 @@
+<div class="page-head">
+ <div>
+  <span class="eyebrow">
+   OPERAÇÕES DE FECHO · AJUSTAMENTOS
+  </span>
+  <h1>
+   Regularizações
+  </h1>
+  <p>
+   Registo e aprovação de operações de ajustamento contabilístico.
+  </p>
+ </div>
+ <div class="page-actions">
+  <button class="btn btn-secondary" onclick="showToast('Consulta de regularizações.')">
+   Exportar
+  </button>
+  <button class="btn btn-primary" onclick="openModal('adjustModal')">
+   <i class="bi bi-plus-lg"></i> Nova regularização
+  </button>
+ </div>
+</div>
+<section class="panel">
+ <div class="panel-head">
+  <div>
+   <h2>
+    Regularizações do exercício
+   </h2>
+   <p>
+    Movimentos que requerem justificação e documento de suporte.
+   </p>
+  </div>
+ </div>
+ <div class="toolbar">
+  <label class="search-box">
+   <span>
+    <i class="bi bi-search"></i>
+   </span>
+   <input id="adjustSearch" oninput="filterTable('adjustSearch','adjustTable')" placeholder="Pesquisar por tipo, conta ou justificação..."/>
+  </label>
+  <label class="field">
+   <span>
+    Tipo
+   </span>
+   <select>
+    <option>
+     Todos
+    </option>
+    <option>
+     Acréscimo
+    </option>
+    <option>
+     Diferimento
+    </option>
+    <option>
+     Depreciação
+    </option>
+    <option>
+     Imparidade
+    </option>
+   </select>
+  </label>
+  <label class="field">
+   <span>
+    Estado
+   </span>
+   <select>
+    <option>
+     Todos
+    </option>
+    <option>
+     Pendente
+    </option>
+    <option>
+     Aprovada
+    </option>
+   </select>
+  </label>
+ </div>
+ <div class="table-wrap">
+  <table class="data-table" id="adjustTable">
+   <thead>
+    <tr>
+     <th>
+      TIPO
+     </th>
+     <th>
+      DATA
+     </th>
+     <th>
+      CONTA ORIGEM
+     </th>
+     <th>
+      CONTA DESTINO
+     </th>
+     <th class="amount">
+      VALOR
+     </th>
+     <th>
+      JUSTIFICAÇÃO
+     </th>
+     <th>
+      SUPORTE
+     </th>
+     <th>
+      APROVAÇÃO
+     </th>
+    </tr>
+   </thead>
+   <tbody>
+    <tr>
+     <td>
+      <span class="badge badge-neutral">
+       Depreciação
+      </span>
+     </td>
+     <td>
+      31/10/2026
+     </td>
+     <td>
+      1.1.02
+     </td>
+     <td>
+      6.1.08
+     </td>
+     <td class="amount">
+      185.000,00
+     </td>
+     <td>
+      Depreciação mensal do activo
+     </td>
+     <td>
+      Mapa DEP-10
+     </td>
+     <td>
+      <span class="badge badge-success">
+       Aprovada
+      </span>
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span class="badge badge-neutral">
+       Acréscimo
+      </span>
+     </td>
+     <td>
+      31/10/2026
+     </td>
+     <td>
+      6.1.12
+     </td>
+     <td>
+      3.2.01
+     </td>
+     <td class="amount">
+      74.500,00
+     </td>
+     <td>
+      Serviço prestado não facturado
+     </td>
+     <td>
+      Memória 021
+     </td>
+     <td>
+      <span class="badge badge-warning">
+       Pendente
+      </span>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+ </div>
+</section>
+<div class="modal-backdrop" id="adjustModal">
+ <div class="modal">
+  <div class="modal-head">
+   <div>
+    <h2>
+     Nova regularização
+    </h2>
+    <p>
+     Registe o ajustamento e o respectivo suporte.
+    </p>
+   </div>
+   <button class="modal-close" data-close="adjustModal">
+    ×
+   </button>
+  </div>
+  <form class="js-demo-submit">
+   <div class="modal-body">
+    <div class="form-grid">
+     <label class="field">
+      <span>
+       Tipo de regularização *
+      </span>
+      <select>
+       <option>
+        Acréscimo
+       </option>
+       <option>
+        Diferimento
+       </option>
+       <option>
+        Depreciação
+       </option>
+       <option>
+        Imparidade
+       </option>
+       <option>
+        Reclassificação
+       </option>
+      </select>
+     </label>
+     <label class="field">
+      <span>
+       Data *
+      </span>
+      <input type="date" value="2026-11-30"/>
+     </label>
+     <label class="field">
+      <span>
+       Conta de origem *
+      </span>
+      <select>
+       <option>
+        6.1.12 — Custos
+       </option>
+       <option>
+        1.1.02 — Activos
+       </option>
+      </select>
+     </label>
+     <label class="field">
+      <span>
+       Conta de destino *
+      </span>
+      <select>
+       <option>
+        3.2.01 — Fornecedores
+       </option>
+       <option>
+        6.1.08 — Depreciações
+       </option>
+      </select>
+     </label>
+     <label class="field">
+      <span>
+       Valor *
+      </span>
+      <input placeholder="0,00"/>
+     </label>
+     <label class="field">
+      <span>
+       Documento de suporte
+      </span>
+      <input type="file"/>
+     </label>
+     <label class="field field-full">
+      <span>
+       Justificação *
+      </span>
+      <textarea placeholder="Fundamente o ajustamento." required="" rows="3"></textarea>
+     </label>
+    </div>
+   </div>
+   <div class="modal-foot">
+    <button class="btn btn-secondary" data-close="adjustModal" type="button">
+     Cancelar
+    </button>
+    <button class="btn btn-primary" type="submit">
+     Submeter para aprovação
+    </button>
+   </div>
+  </form>
+ </div>
+</div>

@@ -1,0 +1,165 @@
+@{
+    var empresa = (string)(ViewBag.Empresa ?? "DYLANDE — Prestação de Serviços e Comércio");
+}
+
+<div class="page-head">
+    <div>
+        <span class="eyebrow">FECHO E IMPOSTOS · EXERCÍCIO 2026</span>
+        <h1>Apuramento</h1>
+        <p>Apuramento do resultado do exercício e obrigações fiscais.</p>
+    </div>
+    <div class="page-actions">
+        <button class="btn btn-secondary" type="button" onclick="printReport('Apuramento contabilístico')">
+            <i class="bi bi-printer"></i>
+            Imprimir
+        </button>
+        <button class="btn btn-primary" type="button" onclick="showToast('O apuramento definitivo requer validação e aprovação.')">
+            <i class="bi bi-check2-circle"></i>
+            Validar apuramento
+        </button>
+    </div>
+</div>
+
+<div class="notice">
+    <span class="notice-icon"><i class="bi bi-info-circle"></i></span>
+    <div>
+        <b>Operação contabilística controlada.</b>
+        O apuramento deve ser conferido antes da contabilização dos lançamentos de imposto e resultado.
+    </div>
+</div>
+
+<div class="grid grid-3 section-bottom">
+    <article class="card stat-card">
+        <span class="stat-icon"><i class="bi bi-graph-up-arrow"></i></span>
+        <div>
+            <small>Resultado antes do imposto</small>
+            <strong>6.430.000,00</strong>
+            <span>AOA · Exercício 2026</span>
+        </div>
+    </article>
+    <article class="card stat-card">
+        <span class="stat-icon"><i class="bi bi-receipt"></i></span>
+        <div>
+            <small>IVA apurado</small>
+            <strong>1.284.000,00</strong>
+            <span>Saldo a entregar</span>
+        </div>
+    </article>
+    <article class="card stat-card">
+        <span class="stat-icon"><i class="bi bi-bank"></i></span>
+        <div>
+            <small>Imposto Industrial</small>
+            <strong>1.607.500,00</strong>
+            <span>Estimativa do exercício</span>
+        </div>
+    </article>
+</div>
+
+<section class="panel">
+    <div class="panel-head">
+        <div>
+            <h2>Processos de apuramento</h2>
+            <p>Selecione o processo que pretende consultar ou validar.</p>
+        </div>
+    </div>
+
+    <div class="tabs" role="tablist">
+        <button class="tab-button active" type="button" data-tab-target="resultado">
+            <i class="bi bi-bar-chart-line"></i>
+            Apuramento de resultado
+        </button>
+        <button class="tab-button" type="button" data-tab-target="iva">
+            <i class="bi bi-receipt-cutoff"></i>
+            Apuramento de IVA
+        </button>
+        <button class="tab-button" type="button" data-tab-target="industrial">
+            <i class="bi bi-building"></i>
+            Imposto Industrial
+        </button>
+    </div>
+
+    <div class="tab-panel active" data-tab-panel="resultado">
+        <div class="table-wrap">
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>DESCRIÇÃO</th>
+                        <th class="amount">VALOR</th>
+                        <th>ESTADO</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Rendimentos do exercício</td>
+                        <td class="amount">42.850.000,00 AOA</td>
+                        <td><span class="badge badge-success"><i class="dot"></i>Conferido</span></td>
+                    </tr>
+                    <tr>
+                        <td>Gastos do exercício</td>
+                        <td class="amount">36.420.000,00 AOA</td>
+                        <td><span class="badge badge-success"><i class="dot"></i>Conferido</span></td>
+                    </tr>
+                    <tr>
+                        <td>Resultado antes do imposto</td>
+                        <td class="amount"><strong>6.430.000,00 AOA</strong></td>
+                        <td><span class="badge badge-success"><i class="dot"></i>Apurado</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="tab-panel" data-tab-panel="iva" hidden>
+        <div class="summary-grid">
+            <div class="summary-card"><span>IVA liquidado</span><strong>3.420.000,00 AOA</strong></div>
+            <div class="summary-card"><span>IVA dedutível</span><strong>2.136.000,00 AOA</strong></div>
+            <div class="summary-card"><span>IVA a entregar</span><strong>1.284.000,00 AOA</strong></div>
+        </div>
+        <div class="table-wrap section-gap">
+            <table class="data-table">
+                <thead><tr><th>TIPO</th><th>PERÍODO</th><th class="amount">VALOR</th><th>ESTADO</th></tr></thead>
+                <tbody>
+                    <tr><td>IVA liquidado</td><td>Novembro 2026</td><td class="amount">3.420.000,00 AOA</td><td><span class="badge badge-success"><i class="dot"></i>Conferido</span></td></tr>
+                    <tr><td>IVA dedutível</td><td>Novembro 2026</td><td class="amount">2.136.000,00 AOA</td><td><span class="badge badge-success"><i class="dot"></i>Conferido</span></td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="tab-panel" data-tab-panel="industrial" hidden>
+        <div class="summary-grid">
+            <div class="summary-card"><span>Matéria coletável</span><strong>6.430.000,00 AOA</strong></div>
+            <div class="summary-card"><span>Imposto estimado</span><strong>1.607.500,00 AOA</strong></div>
+            <div class="summary-card"><span>Estado</span><strong>Em conferência</strong></div>
+        </div>
+        <div class="panel-note section-gap">
+            <i class="bi bi-shield-check"></i>
+            <div><strong>Validação fiscal</strong><p>A taxa e as regras fiscais definitivas devem ser parametrizadas de acordo com o regime aplicável à empresa.</p></div>
+        </div>
+    </div>
+</section>
+
+@section Scripts {
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const buttons = document.querySelectorAll('[data-tab-target]');
+            const panels = document.querySelectorAll('[data-tab-panel]');
+
+            buttons.forEach((button) => {
+                button.addEventListener('click', () => {
+                    const target = button.dataset.tabTarget;
+                    buttons.forEach((item) => item.classList.toggle('active', item === button));
+                    panels.forEach((panel) => {
+                        const active = panel.dataset.tabPanel === target;
+                        panel.hidden = !active;
+                        panel.classList.toggle('active', active);
+                    });
+                });
+            });
+        });
+    </script>
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/apuramento.css" />
+}

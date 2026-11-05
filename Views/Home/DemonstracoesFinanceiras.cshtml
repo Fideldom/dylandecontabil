@@ -1,0 +1,113 @@
+@{
+    var empresa = (string)(ViewBag.Empresa ?? "DYLANDE — Prestação de Serviços e Comércio");
+}
+
+<div class="page-head">
+    <div>
+        <span class="eyebrow">RELATÓRIOS · EXERCÍCIO 2026</span>
+        <h1>Demonstrações financeiras</h1>
+        <p>Relatórios financeiros para análise da posição patrimonial, financeira e de resultados.</p>
+    </div>
+    <div class="page-actions">
+        <button class="btn btn-secondary" type="button" onclick="printReport('Demonstrações financeiras')">
+            <i class="bi bi-printer"></i>
+            Imprimir
+        </button>
+        <button class="btn btn-primary" type="button" onclick="showToast('Exportação preparada para integração com o backend.')">
+            <i class="bi bi-file-earmark-arrow-down"></i>
+            Exportar relatório
+        </button>
+    </div>
+</div>
+
+<section class="panel">
+    <div class="panel-head">
+        <div>
+            <h2>Relatórios financeiros</h2>
+            <p>Escolha a demonstração financeira que pretende analisar.</p>
+        </div>
+        <div class="report-period">
+            <label for="financialPeriod">Período</label>
+            <select id="financialPeriod">
+                <option>01/01/2026 — 31/12/2026</option>
+                <option>01/01/2025 — 31/12/2025</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="tabs" role="tablist">
+        <button class="tab-button active" type="button" data-financial-tab="balanco"><i class="bi bi-columns-gap"></i>Balanço Patrimonial</button>
+        <button class="tab-button" type="button" data-financial-tab="fluxo"><i class="bi bi-arrow-left-right"></i>Fluxo de Caixa</button>
+        <button class="tab-button" type="button" data-financial-tab="resultados"><i class="bi bi-bar-chart-line"></i>Demonstração de resultados</button>
+    </div>
+
+    <div class="financial-panel active" data-financial-panel="balanco">
+        <div class="statement-header"><div><strong>Balanço Patrimonial</strong><span>@empresa</span></div><span>Em 31 de Dezembro de 2026</span></div>
+        <div class="financial-columns">
+            <div class="statement-card">
+                <h3>Ativo</h3>
+                <div class="statement-row"><span>Ativo não corrente</span><strong>18.650.000,00</strong></div>
+                <div class="statement-row"><span>Ativo corrente</span><strong>27.840.000,00</strong></div>
+                <div class="statement-row total"><span>Total do Ativo</span><strong>46.490.000,00 AOA</strong></div>
+            </div>
+            <div class="statement-card">
+                <h3>Passivo e Capital Próprio</h3>
+                <div class="statement-row"><span>Passivo não corrente</span><strong>8.400.000,00</strong></div>
+                <div class="statement-row"><span>Passivo corrente</span><strong>12.760.000,00</strong></div>
+                <div class="statement-row"><span>Capital próprio</span><strong>25.330.000,00</strong></div>
+                <div class="statement-row total"><span>Total</span><strong>46.490.000,00 AOA</strong></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="financial-panel" data-financial-panel="fluxo" hidden>
+        <div class="statement-header"><div><strong>Demonstração de Fluxo de Caixa</strong><span>@empresa</span></div><span>Exercício 2026</span></div>
+        <div class="table-wrap">
+            <table class="data-table">
+                <thead><tr><th>ACTIVIDADE</th><th>DESCRIÇÃO</th><th class="amount">VALOR</th></tr></thead>
+                <tbody>
+                    <tr><td>Operacional</td><td>Recebimentos de clientes</td><td class="amount">32.840.000,00 AOA</td></tr>
+                    <tr><td>Operacional</td><td>Pagamentos a fornecedores e pessoal</td><td class="amount">-24.620.000,00 AOA</td></tr>
+                    <tr><td>Investimento</td><td>Aquisição de activos</td><td class="amount">-3.200.000,00 AOA</td></tr>
+                    <tr><td>Financiamento</td><td>Financiamentos obtidos</td><td class="amount">5.000.000,00 AOA</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="financial-panel" data-financial-panel="resultados" hidden>
+        <div class="statement-header"><div><strong>Demonstração de Resultados</strong><span>@empresa</span></div><span>Exercício 2026</span></div>
+        <div class="statement-card statement-wide">
+            <div class="statement-row"><span>Rendimentos</span><strong>42.850.000,00 AOA</strong></div>
+            <div class="statement-row"><span>Gastos operacionais</span><strong>36.420.000,00 AOA</strong></div>
+            <div class="statement-row"><span>Resultado antes do imposto</span><strong>6.430.000,00 AOA</strong></div>
+            <div class="statement-row"><span>Imposto Industrial</span><strong>-1.607.500,00 AOA</strong></div>
+            <div class="statement-row total"><span>Resultado líquido do exercício</span><strong>4.822.500,00 AOA</strong></div>
+        </div>
+    </div>
+</section>
+
+@section Scripts {
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const buttons = document.querySelectorAll('[data-financial-tab]');
+            const panels = document.querySelectorAll('[data-financial-panel]');
+
+            buttons.forEach((button) => {
+                button.addEventListener('click', () => {
+                    const target = button.dataset.financialTab;
+                    buttons.forEach((item) => item.classList.toggle('active', item === button));
+                    panels.forEach((panel) => {
+                        const active = panel.dataset.financialPanel === target;
+                        panel.hidden = !active;
+                        panel.classList.toggle('active', active);
+                    });
+                });
+            });
+        });
+    </script>
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/demonstracoes-financeiras.css" />
+}

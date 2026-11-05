@@ -1,16 +1,20 @@
+@{
+    Layout = null;
+}
 <!DOCTYPE html>
 <html lang="pt-AO">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Entrar | DYLANDE Contabil</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="~/css/site.css" />
+    <title>Acesso · DYLANDE Contabil</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="~/css/login.css" />
 </head>
-<body class="login-page">
-    <main class="login-shell">
+<body>
+<main class="login-shell">
         <section class="login-brand-panel">
             <div class="brand brand-light"><span class="brand-mark">DY</span><span>dylande<span class="brand-muted">.contabil</span></span></div>
             <div class="brand-message">
@@ -22,48 +26,153 @@
             <div class="decor decor-one"></div><div class="decor decor-two"></div>
         </section>
         <section class="login-form-panel">
-            <div class="mobile-brand brand"><span class="brand-mark">DY</span><span>dylande<span class="brand-muted">.contabil</span></span></div>
+            <div class="mobile-brand brand">
+            <span class="brand-mark">DY</span><span>dylande<span class="brand-muted">.contabil</span></span>
+            </div>
             <div class="login-form-wrap">
-                <div class="form-heading"><span class="eyebrow">ÁREA RESERVADA</span><h2>Bem-vindo de volta</h2><p>Introduza os seus dados para continuar.</p></div>
+                <div class="form-heading">
+                <span class="eyebrow">ÁREA RESERVADA</span>
+                <h2>Bem-vindo de volta</h2>
+                <p>Introduza os seus dados para continuar.</p></div>
                 <form id="loginForm" novalidate>
                     <label for="email">E-mail ou utilizador</label>
-                    <div class="input-wrap"><span class="input-icon">◎</span><input id="email" name="email" autocomplete="username" placeholder="contabilista@empresa.ao" required /></div>
-                    <div class="label-row"><label for="password">Palavra-passe</label><a href="#" id="forgotLink">Esqueceu-se?</a></div>
-                    <div class="input-wrap"><span class="input-icon">⌑</span><input id="password" type="password" autocomplete="current-password" placeholder="Introduza a sua palavra-passe" required /><button class="show-password" type="button" id="togglePassword" aria-label="Mostrar palavra-passe">Mostrar</button></div>
-                    <label class="check-row"><input type="checkbox" id="remember" /> <span>Manter sessão iniciada</span></label>
+
+                    <div class="input-wrap">
+                    <span class="input-icon"><i class="bi bi-person"></i></span>
+                    <input id="email" name="email" autocomplete="username" placeholder="contabilista@empresa.ao" required />
+                    </div>
+
+                    <div class="label-row">
+                    <label for="password">Palavra-passe</label>
+                    <a href="#" id="forgotLink">Esqueceu-se?</a>
+                    </div>
+
+                    <div class="input-wrap">
+                    <span class="input-icon"><i class="bi bi-lock"></i></span>
+                    <input id="password" type="password" autocomplete="current-password" placeholder="Introduza a sua palavra-passe" required />
+                    <button class="show-password" type="button" id="togglePassword" aria-label="Mostrar palavra-passe">Mostrar</button>
+                    </div>
+
+                    <label class="check-row"><input type="checkbox" id="remember" /> 
+                    <span>Manter sessão iniciada</span>
+                    </label>
+
                     <p class="form-error" id="loginError" role="alert"></p>
+
                     <button class="btn btn-primary btn-wide" type="submit">Entrar <span>→</span></button>
+
                 </form>
-                <div class="login-foot"><span>© 2026 DYLANDE Contabil</span><span><i class="tiny-lock">▣</i> Ambiente de acesso protegido</span></div>
+
+                <div class="login-foot">
+                <span>© 2026 DYLANDE Contabil</span>
+                <span><i class="tiny-lock">▣</i> Ambiente de acesso protegido</span>
+                </div>
+
             </div>
-            <button class="settings-entry" id="openSettings"><span class="settings-icon">⚙</span><span><strong>Definições</strong><small>Preferências de apresentação e acesso</small></span><span class="settings-arrow">↗</span></button>
+
+            <button class="settings-entry" id="openSettings">
+            <span class="settings-icon"><i class="bi bi-gear"></i></span><span>
+            <strong>Definições</strong>
+            <small>Preferências de apresentação e acesso</small>
+            </span>
+            <span class="settings-arrow"><i class="bi bi-arrow-up-right"></i></span>
+            </button>
+
         </section>
+
     </main>
 
     <div class="modal-backdrop" id="companyModal" aria-hidden="true">
         <section class="modal company-modal" role="dialog" aria-modal="true" aria-labelledby="companyTitle">
-            <div class="modal-header"><div><span class="eyebrow">SELECÇÃO DE EMPRESA</span><h2 id="companyTitle">A sua carteira</h2><p>Escolha a empresa em que pretende trabalhar.</p></div><button class="icon-button" data-close="companyModal" aria-label="Fechar">×</button></div>
-            <div class="company-search"><span>⌕</span><input id="companySearch" placeholder="Pesquisar empresa ou NIF..." /></div>
-            <div class="company-list" id="companyList">
-                <button class="company-option selected" data-company="RAZCOF — Comércio e Prestação de Serviços" data-nif="5001234567"><span class="company-avatar">R</span><span class="company-info"><strong>RAZCOF</strong><small>Comércio e Prestação de Serviços · NIF 5001234567</small></span><span class="company-state"><i></i> Activa</span><span class="company-check">✓</span></button>
-                <button class="company-option" data-company="DYLANDE Prestação de Serviços e Comércio." data-nif="5007654321"><span class="company-avatar avatar-blue">DY</span><span class="company-info"><strong>DYLANDE Prestação de Serviços e Comércio.</strong><small>Vendas de softwares · NIF 5007654321</small></span><span class="company-state"><i></i> Activa</span><span class="company-check">✓</span></button>
-                <button class="company-option" data-company="Comércio Modelo, Lda." data-nif="5009876543"><span class="company-avatar avatar-slate">C</span><span class="company-info"><strong>Comércio Modelo, Lda.</strong><small>Comércio geral · NIF 5009876543</small></span><span class="company-state"><i></i> Activa</span><span class="company-check">✓</span></button>
+            <div class="modal-header">
+
+            <div>
+            <span class="eyebrow">SELECÇÃO DE EMPRESA</span>
+            <h2 id="companyTitle">A sua carteira</h2>
+            <p>Escolha a empresa em que pretende trabalhar.</p>
             </div>
-            <div class="modal-footer"><span id="selectedCompanyLabel">1 empresa seleccionada</span><button class="btn btn-primary" id="accessCompany">Aceder à empresa <span>→</span></button></div>
+            <button class="icon-button" data-close="companyModal" aria-label="Fechar">×</button>
+            </div>
+            <div class="company-search">
+            <span>⌕</span>
+            <input id="companySearch" placeholder="Pesquisar empresa ou NIF..." />
+            </div>
+
+            <div class="company-list" id="companyList">
+
+                <button class="company-option selected" data-company="RAZCOF — Comércio e Prestação de Serviços" data-nif="5001234567">
+                <span class="company-avatar">R</span>
+                <span class="company-info">
+                <strong>RAZCOF</strong>
+                <small>Comércio e Prestação de Serviços · NIF 5001234567</small>
+                </span>
+                <span class="company-state"><i></i> Activa</span><span class="company-check">✓</span>
+                </button>
+
+                <button class="company-option" data-company="DYLANDE Prestação de Serviços e Comércio." data-nif="5007654321">
+                <span class="company-avatar avatar-blue">DY</span>
+                <span class="company-info">
+                <strong>DYLANDE Prestação de Serviços e Comércio.</strong>
+                <small>Vendas de softwares · NIF 5007654321</small>
+                </span>
+                <span class="company-state"><i></i> Activa</span>
+                <span class="company-check">✓</span>
+                </button>
+
+                <button class="company-option" data-company="Comércio Modelo, Lda." data-nif="5009876543">
+                <span class="company-avatar avatar-slate">C</span>
+                <span class="company-info">
+                <strong>Comércio Modelo, Lda.</strong>
+                <small>Comércio geral · NIF 5009876543</small>
+                </span>
+                <span class="company-state"><i></i> Activa</span>
+                <span class="company-check">✓</span>
+                </button>
+
+            </div>
+
+            <div class="modal-footer">
+            <span id="selectedCompanyLabel">1 empresa seleccionada</span>
+            <button class="btn btn-primary" id="accessCompany">Aceder à empresa <span>→</span>
+            </button>
+            </div>
+            
         </section>
     </div>
 
     <div class="modal-backdrop" id="settingsModal" aria-hidden="true">
         <section class="modal settings-modal" role="dialog" aria-modal="true" aria-labelledby="settingsTitle">
-            <div class="modal-header"><div><span class="eyebrow">PERSONALIZAÇÃO</span><h2 id="settingsTitle">Definições</h2><p>Configure a apresentação desta demonstração.</p></div><button class="icon-button" data-close="settingsModal" aria-label="Fechar">×</button></div>
+            <div class="modal-header">
+            <div>
+            <span class="eyebrow">PERSONALIZAÇÃO</span>
+            <h2 id="settingsTitle">Definições</h2>
+            <p>Configure a apresentação desta demonstração.</p>
+            </div>
+            <button class="icon-button" data-close="settingsModal" aria-label="Fechar">×</button>
+            </div>
+
             <div class="settings-content">
-                <label for="languageSelect">Idioma da interface</label><select id="languageSelect"><option>Português</option><option>English (em breve)</option></select>
-                <label for="densitySelect">Densidade da interface</label><select id="densitySelect"><option value="comfortable">Confortável</option><option value="compact">Compacta</option></select>
-                <div class="settings-note"><span>ⓘ</span><p>As preferências e o acesso são demonstrativos nesta fase. Ainda não existe autenticação nem gravação permanente.</p></div>
+                <label for="languageSelect">Idioma da interface</label>
+                <select id="languageSelect">
+                <option>Português</option>
+                <option>English (em breve)</option>
+                </select>
+
+                <label for="densitySelect">Densidade da interface</label>
+                <select id="densitySelect">
+                <option value="comfortable">Confortável</option>
+                <option value="compact">Compacta</option>
+                </select>
+
+                <div class="settings-note">
+                <span>ⓘ</span>
+                <p>As preferências e o acesso são demonstrativos nesta fase. Ainda não existe autenticação nem gravação permanente.</p>
+                </div>
+                
             </div>
             <div class="modal-footer"><span></span><button class="btn btn-primary" id="saveSettings">Guardar preferências</button></div>
         </section>
     </div>
-    <script src="~/js/site.js"></script>
+    <script src="~/js/login.js"></script>
 </body>
 </html>
